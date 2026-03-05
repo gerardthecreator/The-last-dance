@@ -1,0 +1,97 @@
+/* ANIMACIONES DE ENTRADA */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInSlide 0.6s ease-out forwards;
+}
+
+/* ESTILOS PARA LA RESOLUCIÓN PASO A PASO */
+.step-number {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: var(--bg-color);
+    box-shadow: 3px 3px 6px var(--neu-lower), -3px -3px 6px var(--neu-upper);
+    border-radius: 50%;
+    margin-right: 15px;
+    font-weight: bold;
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+}
+
+.step-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* RESALTADO DE DATOS Y RESULTADOS */
+.dato-quimico {
+    background: rgba(74, 144, 226, 0.1);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+    border: 1px dashed var(--accent-color);
+}
+
+.resultado-final {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-color);
+    box-shadow: var(--shadow-inner);
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: var(--font-heading);
+    color: var(--text-main);
+}
+
+/* ESTILO PARA TABLAS DE DATOS (Si se requieren) */
+.tabla-datos {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin: 1rem 0;
+}
+
+.tabla-datos td {
+    padding: 1rem;
+    background: var(--bg-color);
+    box-shadow: 2px 2px 5px var(--neu-lower), -2px -2px 5px var(--neu-upper);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* PREVENCIÓN DE DESBORDE DE TEXTO */
+p, li, span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* NOTAS PEDAGÓGICAS */
+.nota-pedagogica {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #fffbe6; /* Un tono crema suave que no rompe el neumorfismo */
+    border-left: 5px solid #f1c40f;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #7f8c8d;
+}
