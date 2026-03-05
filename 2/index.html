@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#e0e5ec">
+  <meta name="description" content="Ejercicios resueltos de química gaseosa con explicaciones paso a paso y fórmulas renderizadas con MathJax.">
+  
+  <title>Química Pro: Ejercicios Resueltos</title>
+  
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=PT+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Configuración MathJax 3 -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true,
+        processEnvironments: false,
+        packages: {'[+]': ['noerrors']}
+      },
+      options: {
+        enableMenu: false,
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      startup: {
+        pageReady: () => {
+          console.log('✅ MathJax listo');
+          return MathJax.startup.defaultPageReady();
+        }
+      },
+      loader: { load: ['[tex]/noerrors'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header neumórfico -->
+  <header class="neu-header" role="banner">
+    <h1 class="main-title">PLAN DE ESTUDIO GERARD</h1>    <p class="subtitle">Ejercicios resueltos paso a paso</p>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="container" role="main">
+    
+    <!-- Sidebar con menú de ejercicios -->
+    <aside class="sidebar" aria-label="Lista de ejercicios">
+      <h3 class="nav-title" id="menu-heading">Ejercicios</h3>
+      <ul id="menu-list" role="listbox" aria-labelledby="menu-heading">
+        <!-- Se llena dinámicamente con main.js -->
+      </ul>
+    </aside>
+    
+    <!-- Área de contenido -->
+    <section class="content-area">
+      <article id="exercise-display" class="neu-card" aria-live="polite" aria-busy="false">
+        <!-- Mensaje de bienvenida inicial -->
+        <div id="welcome-message">
+          <h2>Bienvenido 👋</h2>
+          <p>Selecciona un ejercicio del menú para comenzar.</p>
+          <p class="hint"> <em>(•̀ᴗ•́)و</em></p>
+        </div>
+      </article>
+    </section>
+    
+  </div>
+
+  <!-- Footer -->
+  <footer class="neu-footer" role="contentinfo">
+    <p>© 2026 • Plataforma educativa de MATEMÁTICAS</p>
+  </footer>
+
+  <!-- Contenedor de notificaciones -->
+  <div id="notification-container" aria-live="assertive"></div>
+
+  <!-- Scripts en orden correcto -->
+  <script src="info.js"></script>
+  <script src="main.js" defer></script>
+  
+  <!-- Diagnóstico opcional (eliminar en producción) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.group('🔍 Carga');
+      console.log('✅ DOM listo');
+      console.log('📦 quimicaData:', typeof quimicaData !== 'undefined' ? `${quimicaData.length} ejercicios` : '❌');
+      console.log('🧮 MathJax:', typeof window.MathJax !== 'undefined' ? '✅' : '❌');
+      console.groupEnd();
+    });
+  </script>  
+</body>
+</html>
